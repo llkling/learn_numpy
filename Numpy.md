@@ -58,7 +58,7 @@ C: Navigation & GPS
 - *Linear Algebra in Action*: 
     To rotate the map, the phone multiplies your location vector by a Rotation Matrix. This instantly calculates the new coordinates for every street and icon on your screen.
 
-  ### 1. Inner or Dot Product of Two n-vectors
+### 1. Inner or Dot Product of Two n-vectors
 
 __Dot Product__ (also called the Inner Product): This is the "glue" that allows us to combine two vectors into a single number. It tells us how much two vectors "align" with each other.
 To find a Dot Product: 
@@ -80,7 +80,7 @@ In NumPy, we use:
 
 The `.shape` always return in a tuple of integers.
 
- ### 2. Euclidean Norm of an n-vector
+### 2. Euclidean Norm of an n-vector
 
 If a vector is a "point in space," the **Euclidean Norm** is simply the straight-line distance from the origin $(0, 0)$ to that point. In plain English: **it is the length of the vector.**
 
@@ -97,6 +97,7 @@ In NumPy, we use:
 
     * The Root Mean Square (rms)
 The RMS is essentially a way to calculate the "average magnitude" of a set of numbers, especially when some are positive and some are negative.
+    
     $$RMS = \sqrt{\frac{x_1^2 + x_2^2 + \dots + x_n^2}{n}}$$
 
 In the Coding world, using *rms* tells you how much "error" your code is. It emphasizes the big and heaviest error for you to see, make your code analyzing more accurate.
@@ -106,6 +107,54 @@ In NumPy, we use:
 - rms = np.sqrt(np.mean(v**2))
 #v is the array
 ```
+### 3. Linear Combination of a Set Vectors
 
- ### 3. Linear Combination of a Set Vectors
+It is when you multiply a vector with a scalar, and add them together to create a brand new vector
+
+If we have a set of vectors $\{v_1, v_2, \dots, v_n\}$ and a set of scalars $\{c_1, c_2, \dots, c_n\}$, the linear combination looks like this:
+
+    $$w = c_1v_1 + c_2v_2 + \dots + c_nv_n$$
+
+In NumPy, we use:
+- `*` and `+` `#operator`
+
+### 4. Linear Dependence vs Independence
+
+- A __dependent__ vector means they are made up from scaling or adding the others. It doesn't provide any new information. It can be track back from one origin vector. It is on the same dimension (one line).
+
+- An __independent__ vector means they are unique/origin vector/data that provide a whole new information or a whole new "dimension". There is no way to create an independent vector from the others.
+
+- Mathematically, a set of vectors is dependent if you can find a __linear combination__ of them (besides all zeros) that equals zero.
+
+### 5. Linear Independence: Determinant and Inverse
+
+These two are tools to tell if your vectors(data) are dependent or independent.
+     **a.The Determinant**
+The Independence Rule:
+ - If $\det(A) \neq 0$: The vectors are Linearly Independent. They spread out and create a real area or volume. (they spread out in different dimension)
+ - If $\det(A) = 0$: The vectors are Linearly Dependent. The shape has "collapsed." In 2D, this means the vectors lie on the same line (Ox or Oy or Oz), so the area is zero. 
+
+    **b. The Inverse**
+The Inverse is the "Undo" button. If you multiply a matrix by its inverse, you get the Identity Matrix (the matrix equivalent of the number 1) #basically a matrix that returns the same result
+
+The Independence Rule:
+ - A matrix only has an inverse if its vectors are Linearly Independent.
+ - There is no inverse (determinant=0) means it's Dependent Vector
+
+In NumPy, we use:
+- `np.linalg.det()`
+- `np.linalg.inv()`
+
+*Note*: The computer stores and handles numbers a llite different. Sometimes you will run up to a **Rounding Error** or **Floating-Point Artifact**, which mean they are a little off the numbr $0$ in this case.
+
+### 6. Reduced Row Echelon Form (RREF)
+
+It a way to find out how many **Independence** are hiding in a Matrix. 
+(It required SymPy to run the `rref()` function)
+
+
+
+
+
+
 
