@@ -152,7 +152,33 @@ In NumPy, we use:
 It a way to find out how many **Independence** are hiding in a Matrix. 
 (It required SymPy to run the `rref()` function)
 
+### 7. Inverse in Matrix
 
+Similar to vectors, the Inverse $A^{-1}$ is the matrix that "undoes" whatever $A$ did. If you multiply them together, you get back to the Identity Matrix $I$.
+    $$A \cdot A^{-1} = I$$
+
+The Identity Matrix will have the form of a square matrix that has 1s on the main diagonal (from top-left to bottom-right) and 0s everywhere else.
+    $$I = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+
+### 8. Eigenvalue and Eigenvector
+
+Usually a vector will change direction whenever they are @ by a matrix. However, there are a few special directions where the vector **stays on its original line.**
+- Eigenvector ($\mathbf{v}$): A vector that does not change direction when a transformation is applied. It only gets stretched or squished.
+- Eigenvalue ($\lambda$): The scalar that tells you *how much* that eigenvector was stretched or squished. 
+    $$A\mathbf{v} = \lambda\mathbf{v}$$
+
+In NumPy, we use: 
+- `np.linalg.eig()`
+
+### 9. Standard Basis Vectors
+
+Think of them as the "pure" unit measurment. A foundation for everything else. Those are always __Independent__.
+
+In a 2D space, the standard basis vectors are usually called $\mathbf{i}$ and $\mathbf{j}$:
+    $\mathbf{i} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ (One unit step exactly along the $x$-axis)
+    $\mathbf{j} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$ (One unit step exactly along the $y$-axis)
+
+Every other vector in your space is just a "recipe" or a linear combination of these two. For example, the vector $\begin{bmatrix} 3 \\ 2 \end{bmatrix}$ is just $3\mathbf{i} + 2\mathbf{j}$.
 
 
 
