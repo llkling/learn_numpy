@@ -180,6 +180,41 @@ In a 2D space, the standard basis vectors are usually called $\mathbf{i}$ and $\
 
 Every other vector in your space is just a "recipe" or a linear combination of these two. For example, the vector $\begin{bmatrix} 3 \\ 2 \end{bmatrix}$ is just $3\mathbf{i} + 2\mathbf{j}$.
 
+In NumPy, they are usually to test how a matrix transformation behave. 
+- `i=np.array[1,0]`
+
+### 10. Matrix Transformation
+
+In coding, a matrix acts like a *function*. Every matrix A takes the entire grid of space and pushes, pulls, or twists it into a new *shape*.
+
+*Example:*
+- Translation/Scaling: Making a character larger or smaller.
+- Rotation: Turning a camera to look around a corner.
+- Shearing: Distorting an image to create a sense of speed or motion.
+
+In NumPy, we use:
+- `@` #dot product
+
+### 11. Normalized and Unit Vector
+
+- A **Unit Vector** is a vector that has a magnitude (length) == 1.
+- **Normalization** is the mathematical process of taking any vectors to scale into **Unit Vectors**.
+
+Real-World Example: AI Similarity (Cosines)
+- "User A" likes 100 action movies and 50 comedies.
+
+- "User B" likes 2 action movies and 1 comedy.
+
+Mathematically, these users are identical in their tastes—they both like action twice as much as comedy. However, the length of User A's vector is much larger because they watch more movies.
+
+By Normalizing both users into Unit Vectors, we can compare their "directions" directly. This is called Cosine Similarity, and it’s how Netflix or Spotify knows you have the same taste as someone else, even if you’ve consumed less content.
+
+Mathematically: 
+To get the unit vector $\mathbf{\hat{v}}$ (pronounced "v-hat"), you divide the original vector by its own magnitude.
+    $$\mathbf{\hat{v}} = \frac{\mathbf{v}}{\|\mathbf{v}\|}$$
+
+In NumPy, we use:
+-`v / np.linalg.norm(v)` #v is the vector
 
 
 
